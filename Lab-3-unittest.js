@@ -18,13 +18,15 @@ function checkHumberId(idIn) {
 function test__checkHumberId(valueIn, expected) {
 	"use strict";
 	var result = checkHumberId(valueIn);
-	console.log(result);
+	// console.log(result);
 	var check = "xxFAILEDxx"
+	var color = "fail"
 	if ( result === expected )
 	{
 		check = "==PASSED==";
+		color = "pass";
 	}
-	var msg = "Value tested: " + valueIn + " | Expected result: " + expected + " " + check + "<br />";
+	var msg = "Value tested: " + valueIn + " | Expected result: " + expected + " <span class='" + color + "'>" + check + "</span><br />";
 	
 	document.getElementById("data").innerHTML += msg;
 }
@@ -35,3 +37,5 @@ test__checkHumberId("N01255151", true);
 test__checkHumberId("n0125155", false);
 test__checkHumberId("X01255155", false);
 test__checkHumberId("ab1234323", false);
+test__checkHumberId("01234323n", false);
+test__checkHumberId("012343233", false);
