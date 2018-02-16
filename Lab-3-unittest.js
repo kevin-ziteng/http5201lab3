@@ -8,7 +8,7 @@
 function checkHumberId(idIn) {
     "use strict";
     var idTest = false;
-	var idRx = /^n\d{8}$/i;
+    var idRx = /^n\d{8}$/i;
     if (idRx.test(idIn)) {
         idTest = true;
     }
@@ -16,19 +16,19 @@ function checkHumberId(idIn) {
 }
 
 function test__checkHumberId(valueIn, expected) {
-	"use strict";
-	var result = checkHumberId(valueIn);
-	// console.log(result);
-	var check = "xxFAILEDxx"
-	var color = "fail"
-	if ( result === expected )
-	{
-		check = "==PASSED==";
-		color = "pass";
-	}
-	var msg = "Value tested: " + valueIn + " | Expected result: " + expected + " <span class='" + color + "'>" + check + "</span><br />";
-	
-	document.getElementById("data").innerHTML += msg;
+    "use strict";
+    var result = checkHumberId(valueIn);
+    // console.log(result);
+    var check = "xxFAILEDxx";
+    var color = "fail";
+    if (result === expected) {
+        check = "==PASSED==";
+        color = "pass";
+    }
+    var msg = "Value tested: " + valueIn + " | Expected result: " + expected + " <span class='" + color + "'>" + check + "</span><br />";
+
+    var data = document.getElementById("data");
+    data.innerHTML += msg;
 }
 
 test__checkHumberId("n01255155", true);
